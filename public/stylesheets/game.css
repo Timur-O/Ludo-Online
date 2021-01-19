@@ -1,15 +1,5 @@
 @import "style.css";
 
-#waitingscreen{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(128, 128, 128, 0.807);
-    z-index: 1;
-}
-
 #waitingscreen::after{
     content: "Waiting for players...";
     height: 250px;
@@ -25,6 +15,16 @@
     top: calc(50% - 160px);
     left: calc(50% - 250px);
     animation: dots 2s infinite;
+}
+
+#waitingscreen{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(128, 128, 128, 0.807);
+    z-index: 1;
 }
 
 @keyframes dots {
