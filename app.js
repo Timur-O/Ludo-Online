@@ -291,9 +291,8 @@ wss.on("connection", function (ws) {
               'event': "GameTerminated"
             }));
         }
+        game.end();
       }
-      game.gameAborted = true;
-      game.end();
     }
   });
 
@@ -422,7 +421,6 @@ function Game(gameID) {
   this.timeStarted = 0;
   this.timeFinished = 0;
   this.ranking = new Ranking("Blue", "Green", "Red", "Yellow");
-  this.gameAborted = false;
 };
 
 Game.prototype.addPlayer = function(player) {
@@ -468,11 +466,9 @@ Game.prototype.start = function() {
 Game.prototype.end = function() {
   this.finishedStatus = true;
   this.timeFinished = Date.now();
-  if (!this.gameAborted) {
-    splashStats.decrementOngoingGames();
-    splashStats.incrementTotalGames();
-    splashStats.calculateAvgTime(this.timeFinished - this.timeStarted);
-  }
+  splashStats.decrementOngoingGames();
+  splashStats.incrementTotalGames();
+  splashStats.calculateAvgTime(this.timeFinished - this.timeStarted);
 }
 
 Game.prototype.incrementPieceID = function() {
