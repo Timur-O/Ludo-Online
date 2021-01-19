@@ -1,7 +1,8 @@
 var socket;
 
 window.onload = function() {
-    socket = new WebSocket("ws://localhost");
+    var HOST = location.origin.replace(/^http/, 'ws')
+    socket = new WebSocket(HOST);
     socket.onopen = () => {
         console.log("Socket Opened!");
     };
