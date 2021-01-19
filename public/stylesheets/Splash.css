@@ -1,0 +1,122 @@
+@import "style.css";
+
+h1{
+    -webkit-text-stroke: 1px black; 
+    text-align: center;
+    font-size:xx-large;
+}
+
+#red{
+    color: red;
+}
+#blue{
+    color: blue;
+}
+#yellow{
+    color: yellow;
+}
+#green{
+    color: green;
+}
+
+#splashphoto{
+    width: 100%;
+}
+
+#license{
+    font-size: 75%;
+    margin: 0;
+    width: 100%;
+}
+
+#right{
+    width: 5000px;
+    height: 100px;
+    align-items: center;
+}
+
+#toTheRight{
+    float: right;
+    width: 100%;
+}
+
+button{
+    border-radius: 25px;
+    padding: 25px 125px;
+    background-color: #Ff8200;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #ff4d00;
+}
+
+button:hover::after {
+    content: " \1F448";
+    display: contents;
+}
+
+button:hover::before {
+    content: " \1F449";
+    display: contents;
+}
+
+a:active {
+    color: red;
+}
+
+#Main_information{
+    width: 500px;
+    height: 130px;
+    background-color: #89cff0;
+    text-align: center;
+    border: 2px solid black;
+    padding: 30px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#Statistics{
+    background-color: #89cff0;
+    width: 50%;
+    margin: 0 auto;
+}
+
+h4{
+    height: 25px;
+    margin: 0px;
+}
+
+
+.gridBox {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+}
+
+#authors {
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+    animation-name: slide;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    transform: rotate(5deg);
+}
+
+@keyframes slide {
+    0% {
+        left: 1%;
+        transform: rotate(5deg);
+    }
+    50% {
+        left: 89%;
+        transform: rotate(-5deg);
+    }
+    100% {
+        left: 1%;
+        transform: rotate(5deg);
+    }
+}

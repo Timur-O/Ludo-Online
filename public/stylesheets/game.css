@@ -1,0 +1,363 @@
+@import "style.css";
+
+#waitingscreen{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(128, 128, 128, 0.807);
+    z-index: 1;
+}
+
+#waitingscreen::after{
+    content: "Waiting for players...";
+    height: 250px;
+    width: 500px;
+    text-align: center;
+    line-height: 250px;
+    border-color: black;
+    border-style: double;
+    background-color: rgb(202, 160, 98);
+    border-width: 10px;
+    font-size: 50px;
+    position: absolute;
+    top: calc(50% - 160px);
+    left: calc(50% - 250px);
+    animation: dots 2s infinite;
+}
+
+@keyframes dots {
+    0% {
+        content: "Waiting for players";
+    }
+    25% {
+        content: "Waiting for players.";
+    }
+    50% {
+        content: "Waiting for players..";
+    }
+    100% {
+        content: "Waiting for players...";
+    }
+}
+
+#leftSection {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+    float: left;
+    width: 14vw;
+    text-align: center;
+    align-items:center;
+    object-position: center;
+    height: 70vh;
+    margin-right: 2.5px;
+}
+
+.player{
+ 
+    height: 10vh;
+    border: 2px double black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 10%;
+    width: 14vw;;
+}
+
+#redPlayerDice{
+    object-position: center;
+}
+
+#returnDiv{
+    align-items: center;
+    height: 100px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#returnMenuButton{
+    padding: 20px 10px;
+    background-color: rgb(202, 160, 98);
+}
+
+#returnMenuButton::before {
+    content: " \21A9";
+    display: contents;
+}
+
+#returnMenuButton:hover {
+    height: 80px;
+    width: 130px;
+}
+
+
+#returnMenuButton > a {
+    text-decoration: none;
+    color: black;
+}
+
+#returnMenuButton > a:active {
+    color: blueviolet;
+}
+
+#greenPlayerName{
+    background-color: #53fca1;
+}
+
+#redPlayerName{
+    object-position: 0vmin;
+    background-color: #ff6961;
+}
+
+#yellowPlayerName{
+    background-color: #FDFD96;
+}
+
+#bluePlayerName{
+    background-color: #89cff0;
+}
+
+.dice{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: large;
+}
+
+#blueDiceDiv{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.dice:hover {
+    width: 60px;
+    height: 60px;
+}
+
+#middleSection {
+    width: 65vw;
+    display: inline-block;
+    height: 70vh;
+}
+
+.yellowpaint{
+    background-color: #FDFD96;
+}
+
+.greenpaint{
+    background-color: #53fca1;
+}
+
+.bluepaint{
+    background-color: #89cff0;
+}
+
+.redpaint{
+    background-color: #ff6961;
+}
+
+#rightSection {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 80%, repeat(3, auto), 150px;
+    float: right;
+    text-align: center;
+    width: 15vw;
+    height: 70vh;
+}
+
+#ingameStatsBoard {
+    background-color:rgb(202, 160, 98);
+    border: double;
+}
+
+#board {
+    background-color: white;
+    height: 85vh;
+    width: 70vw;
+    display: grid;
+    grid-template-columns: 40% auto 40%;
+    grid-template-rows: 40% auto 40%;
+    border: 4px black solid;
+}
+
+.boardSection {
+    width: 100%;
+    height: 100%;
+}
+
+#upperBoard, #bottomBoard {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+#leftBoard, #rightBoard {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+#upperBoard > div, #bottomBoard > div, #leftBoard > div, #rightBoard > div {
+    border: 1px solid black;
+}
+
+#greenBoardSection {
+    background-color: #53fca1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#yellowBoardSection {
+    background-color: #FDFD96;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#redBoardSection {
+    background-color: #ff6961;
+    display: flex;
+    align-items: center;
+      justify-content: center;
+}
+
+#blueBoardSection {
+    background-color: #89cff0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#centerBoardSection {
+    overflow: hidden;
+    position: relative;
+}
+
+#centerBoardSection > div {
+    width: 100%;
+    height: 100%;
+    transform-origin: top left;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+/* https://stackoverflow.com/questions/30676025/css-split-a-square-into-4-triangles */
+
+#cbYellow {
+    transform: rotate(-135deg);
+    background-color: #FDFD96;
+}
+
+#cbBlue {
+    transform: rotate(-45deg);
+    background-color: #89cff0;
+}
+
+#cbRed {
+    transform: rotate(45deg);
+    background-color: #ff6961;
+}
+
+#cbGreen {
+    transform: rotate(135deg);
+    background-color: #53fca1;
+}
+
+#progressBar {
+    width: 100%;
+    height: 8vh;
+    margin-top: 1vh;
+    text-align: center;
+}
+
+#timeLeft {
+    width: 98%;
+    height: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: red; /* For IE */
+}
+
+.redProgressBar::-webkit-progress-value {
+    background-color: #ff6961;
+}
+
+.redProgressBar::-moz-progress-bar {
+    background-color: #ff6961;
+}
+
+.greenProgressBar::-webkit-progress-value {
+    background-color: #53fca1;
+}
+
+.greenProgressBar::-moz-progress-bar {
+    background-color: #53fca1;
+}
+
+.blueProgressBar::-webkit-progress-value {
+    background-color: #89cff0;
+}
+
+.blueProgressBar::-moz-progress-bar {
+    background-color: #89cff0;
+}
+
+.yellowProgressBar::-webkit-progress-value {
+    background-color: #FDFD96;
+}
+
+.yellowProgressBar::-moz-progress-bar {
+    background-color: #FDFD96;
+}
+
+.piece{
+    border-radius: 50%;
+    padding: 20px 20px;
+    border-width: 3px;
+    float: left;
+    display: block;
+}
+
+.piece:disabled{
+    border-color: black;
+}
+
+.piece:nth-of-type(3n){
+    clear: left;
+}
+
+.greenpiece{
+    border-color: green;
+    background-color: lightgreen;
+}
+
+.yellowpiece{
+    border-color:gold;
+    background-color: rgb(255, 255, 187);
+}
+
+.bluepiece{
+    border-color:rgb(69, 69, 255);
+    background-color:rgb(194, 229, 250);
+}
+
+.redpiece{
+    border-color:red;
+    background-color:#ff8c8c;
+}
+
+#currRanking > li {
+    font-variant-caps: petite-caps;
+}

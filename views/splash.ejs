@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ludo online</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/Splash.css">
+    </head>
+    <body>
+        <header id="title">
+            <h1>
+                <span id="red">L</span>
+                <span id="blue">U</span>
+                <span id="green">D</span>
+                <span id="yellow">O </span>
+                <span id="space">&nbsp;</span>
+                <span id="green">O</span>
+                <span id="yellow">N</span>
+                <span id="blue">L</span>
+                <span id="yellow">I</span>
+                <span id="red">N</span>
+                <span id="blue">E</span>
+            </h1>            
+
+        </header>
+        <h4 id="authors">Daniel Puente<br>Timur Oberhuber</h4>
+        <br>
+        <div class="gridBox">
+            <p id="license">
+                <img src="https://live.staticflickr.com/3406/3176498029_77feaec2b6_b.jpg" alt="Ludo the game of dice." id = "splashphoto">
+                <a href="https://www.flickr.com/photos/24888071@N07/3176498029">"Ludo the game of dice."</a> 
+                by 
+                <a href="https://www.flickr.com/photos/24888071@N07">Bindaas Madhavi</a> 
+                is licensed under 
+                <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" id = "licenseimage">
+                    Creative Commons
+                    <img src="https://search.creativecommons.org/static/img/cc_icon.svg?image_id=d7371b96-ebbe-4211-9907-f7e8fe2cd9af" id = "licenseimage">
+                    <img src="https://search.creativecommons.org/static/img/cc-by_icon.svg" id = "licenseimage">
+                    <img src="https://search.creativecommons.org/static/img/cc-nc_icon.svg" id = "licenseimage">
+                    <img src="https://search.creativecommons.org/static/img/cc-nd_icon.svg" id = "licenseimage">
+                </a>
+            </p>
+            <div id="toTheRight">
+                <form action="game" method="get">
+                    <button type="submit"> Play </button>
+                </form>     
+                <br>
+                <br>
+                <div id="Main_information">
+                    <p>Welcome to our ludo game. Press play and wait for more players</p>
+                    <p>If you don't know how to play, you can see the instructions <a href='https://en.wikipedia.org/wiki/Ludo_(board_game)#Rules' target="_BLANK">here</a>.</p>
+                    <p>Good luck!</p>
+                </div>
+                <br>
+                <br>
+                <table border='5' id='Statistics'>    
+                    <tbody>
+                        <tr>
+                            <td colspan='2' align='center'><h4>Statistics</h4></td>
+                        </tr>
+                        <tr>
+                            <td>Total games played: </td>
+                            <td><%= totalGamesPlayed %></td>
+                        </tr>
+                        <tr>
+                            <td>Ongoing games: </td>
+                            <td><%= ongoingGames %></td>
+                        </tr>
+                        <tr>
+                            <td>Average time per game: </td>
+                            <td><%= (avgTimePerGame/1000/60).toFixed(2) %> Minutes</td>
+                        </tr>
+                    <tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

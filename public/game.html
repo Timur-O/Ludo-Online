@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ludo Online</title>
+        <script src="javascripts/game.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheets/game.css">
+    </head>
+    <body>
+        <div id="waitingscreen" class="box stack-top"></div>
+        <div id="gamecontainer" class="box">
+            <div id="leftSection">
+                <div id="playerDiv"><p id="greenPlayerName" class="player">Green Player</p></div>
+                <div><button id="greenPlayerDice" disabled class="dice">0</button></div>
+                <div id="returnDiv"><button id="returnMenuButton"><a href="#">Back to menu</a></button></div>
+                <div><button id="redPlayerDice" disabled class="dice bottomdice">0</button></div>
+                <div ><p id="redPlayerName" class="player bottom">Red Player</p></div>
+            </div>
+
+            <div id="middleSection">
+                <div id="board">
+                    <div id="greenBoardSection" class="boardSection">
+                        <button id="greenPiece1" disabled class="piece greenpiece"></button>
+                        <button id="greenPiece2" disabled class="piece greenpiece"></button>
+                        <button id="greenPiece3" disabled class="piece greenpiece"></button>
+                        <button id="greenPiece4" disabled class="piece greenpiece"></button>
+                    </div>
+                    <div id="upperBoard">
+                        <div id="ub5"></div>
+                        <div id="ub6"></div>
+                        <div id="ub7"></div>
+                        <div id="ub4"></div>
+                        <div id="ub12" class="yellowpaint"></div>
+                        <div id="ub8" class="yellowpaint"></div>
+                        <div id="ub3"></div>
+                        <div id="ub13" class="yellowpaint"></div>
+                        <div id="ub9"></div>
+                        <div id="ub2"></div>
+                        <div id="ub14" class="yellowpaint"></div>
+                        <div id="ub10"></div>
+                        <div id="ub1"></div>
+                        <div id="ub15" class="yellowpaint"></div>
+                        <div id="ub11"></div>
+                    </div>
+                    <div id="yellowBoardSection" class="boardSection">
+                        <button id="yellowPiece1" disabled class="piece yellowpiece"></button>
+                        <button id="yellowPiece2" disabled class="piece yellowpiece"></button>
+                        <button id="yellowPiece3" disabled class="piece yellowpiece"></button>
+                        <button id="yellowPiece4" disabled class="piece yellowpiece"></button>
+                    </div>
+                    <div id="leftBoard">
+
+                        <div id="lb7"></div>
+                        <div id="lb8" class="greenpaint"></div>
+                        <div id="lb9"></div>
+                        <div id="lb10"></div>
+                        <div id="lb11"></div>
+                        <div id="lb6"></div>
+                        <div id="lb12" class="greenpaint"></div>
+                        <div id="lb13" class="greenpaint"></div>
+                        <div id="lb14" class="greenpaint"></div>
+                        <div id="lb15" class="greenpaint"></div>
+                        <div id="lb5"></div>
+                        <div id="lb4"></div>
+                        <div id="lb3"></div>
+                        <div id="lb2"></div>
+                        <div id="lb1"></div>
+                    </div>
+                    <div id="centerBoardSection">
+                        <div id="cbYellow"></div>
+                        <div id="cbGreen"></div>
+                        <div id="cbBlue"></div>
+                        <div id="cbRed"></div>
+                    </div>
+                    <div id="rightBoard">
+                        <div id="rb1"></div>
+                        <div id="rb2"></div>
+                        <div id="rb3"></div>
+                        <div id="rb4"></div>
+                        <div id="rb5"></div>
+                        <div id="rb15" class="bluepaint"></div>
+                        <div id="rb14" class="bluepaint"></div>
+                        <div id="rb13" class="bluepaint"></div>
+                        <div id="rb12" class="bluepaint"></div>
+                        <div id="rb6"></div>
+                        <div id="rb11"></div>
+                        <div id="rb10"></div>
+                        <div id="rb9"></div>
+                        <div id="rb8" class="bluepaint"></div>
+                        <div id="rb7"></div>
+                    </div>
+                    <div id="redBoardSection" class="boardSection">
+                        <button id="redPiece1" disabled class="piece redpiece"></button>
+                        <button id="redPiece2" disabled class="piece redpiece"></button>
+                        <button id="redPiece3" disabled class="piece redpiece"></button>
+                        <button id="redPiece4" disabled class="piece redpiece"></button>
+                    </div>
+                    <div id="bottomBoard">
+                        <div id="bb11"></div>
+                        <div id="bb15" class="redpaint"></div>
+                        <div id="bb1"></div>
+                        <div id="bb10"></div>
+                        <div id="bb14" class="redpaint"></div>
+                        <div id="bb2"></div>
+                        <div id="bb9"></div>
+                        <div id="bb13" class="redpaint"></div>
+                        <div id="bb3"></div>
+                        <div id="bb8" class="redpaint"></div>
+                        <div id="bb12" class="redpaint"></div>
+                        <div id="bb4"></div>
+                        <div id="bb7"></div>
+                        <div id="bb6"></div>
+                        <div id="bb5"></div>
+                    </div>
+                    <div id="blueBoardSection" class="boardSection">
+                        <button id="bluePiece1" disabled class="piece bluepiece"></button>
+                        <button id="bluePiece2" disabled class="piece bluepiece"></button>
+                        <button id="bluePiece3" disabled class="piece bluepiece"></button>
+                        <button id="bluePiece4" disabled class="piece bluepiece"></button>
+                    </div>
+                </div>
+                <div id="progressBar">
+                    <!-- <label for="timeLeft">Time Left:</label> -->
+                    <progress id="timeLeft" class="greenProgressBar" value="15" max="30"></progress>
+                </div>
+            </div>
+
+            <div id="rightSection">
+                <div><p id="yellowPlayerName" class="player">Yellow Player</p></div>
+                <div><button id="yellowPlayerDice" disabled class="dice">0</button></div>
+                <div id="ingameStatsBoard">
+                    <p>Current Game Time: <span id="currGameTime">00:00</span></p>
+                    <p>Current Ranking: </p>
+                    <ol id="currRanking">
+                        <li id="rank1">blue</li>
+                        <li id="rank2">green</li>
+                        <li id="rank3">red</li>
+                        <li id="rank4">yellow</li>
+                    </ol>
+                </div>
+                <div id="blueDiceDiv"><button id="bluePlayerDice" disabled class="dice bottomdice">0</button></div>
+                <div><p id="bluePlayerName" class="player bottom">Blue Player</p></div>             
+            </div>
+        </div>
+    </body>
+</html>

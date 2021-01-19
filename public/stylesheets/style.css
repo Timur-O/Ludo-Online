@@ -1,0 +1,33 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+body {
+    background-color: #c7ceea;
+    margin: 5vh 0 0 0;
+}
+
+body::after {
+    content: "";
+}
+
+@media (max-height: 768px), (max-width: 1366px) {
+    body::after {
+        content: "Screen too small!";
+        height: 250px;
+        width: 500px;
+        text-align: center;
+        line-height: 250px;
+        border-color: black;
+        border-style: double;
+        background-color: rgb(202, 160, 98);
+        border-width: 10px;
+        font-size: 50px;
+        position: absolute;
+        top: calc(50% - 160px);
+        left: calc(50% - 250px);
+        z-index: 5;
+    }
+}
